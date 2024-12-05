@@ -8,98 +8,158 @@
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-        /* Custom styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/illustration?ts=638688540488861987');
+        margin: 0;
+        padding: 0;
+    }
 
-        /* Remove all branding and images */
-        #background_branding_container,
-        img[data-tenant-branding-background] {
-            display: none !important;
-        }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-        /* Center the content */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    .container a {
+        color: rgb(250, 34, 25, 1);
+    }
 
-        .panel-default {
-            border: none;
-            box-shadow: none;
-        }
+    .panel-default {
+        border: none;
+        box-shadow: none;
+    }
 
-        .panel-body {
-            text-align: left;
-            box-shadow: 2px 2px 5px 1px;
-        }
+    .panel-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-width: 500px;
+        box-shadow: 2px 2px 5px 1px;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-        .panel-body img{
-            text-align: center;
-        }
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-        .panel-body .heading{
-            font-size: 1rem;
-            display: none;
-        }
+    .logo img {
+        max-height: 100px;
+    }
 
-        .panel-body .intro{
-            font-size: 0.7rem;
-        }
+    .panel-body .heading {
+        font-size: 1rem;
+        display: none;
+    }
 
-        /* Sign-in button styling */
-        #api .localAccount .entry .buttons button {
-            background: linear-gradient(156deg, rgb(250, 34, 25, 1) 0%, rgba(232, 98, 80, 1) 100%);
-            color: white !important;
-            opacity: 0.9;
-            transition: 0.3s !important;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            cursor: pointer;
-            width: 100%;
-        }
+    .panel-body .intro {
+        display: none;
+    }
 
-        #api .localAccount .entry .buttons button:hover {
-            background: linear-gradient(156deg, rgb(149, 41, 37) 0%, rgba(232, 98, 80, 1) 100%);
-            color: white !important;
-            opacity: 1;
-            transition: 0.6s;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            cursor: pointer;
-            width: 100%;
-        }
+    .divider {
+        display: none;
+    }
 
-        .logo img{
-            max-height: 100px;
-        }
+    #api .localAccount .entry {
+        min-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .unified_container .row .panel-default #api .localAccount .entry .entry-item input {
-            outline: 0;
-            background-color: #fff !important;
-            background-image: none !important;
-            border-radius: .5rem !important;
-            color: #555;
-            display: inline-block;
-            font-size: 1em;
-            height: 50px;
-            line-height: 1.42857143;
-            padding: 6px 20px;
-            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
-            width: 100% !important;
-            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
-            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s !important;
-        }
+    .entry-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .entry-item label {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    input {
+        outline: 0;
+        background-color: #fff !important;
+        background-image: none !important;
+        border-radius: 3px !important;
+        display: inline-block;
+        font-size: 1em;
+        height: 40px;
+        padding: 6px 20px;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+        margin-bottom: 10px;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s !important;
+        width: 100% !important;
+        min-width: 400px;
+    }
+
+    .password-label {
+        min-width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .password-label a{
+            min-width: 50%;
+            text-align: right;
+    }
+
+    #api .localAccount .entry .buttons button {
+        background: linear-gradient(156deg, rgb(250, 34, 25, 1) 0%, rgba(232, 98, 80, 1) 100%);
+        color: white !important;
+        opacity: 0.9;
+        transition: 0.3s !important;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        min-width: 400px;
+    }
+
+    #api .localAccount .entry .buttons button:hover {
+        background: linear-gradient(156deg, rgb(212, 74, 69) 0%, rgba(232, 98, 80, 1) 100%);
+        color: white !important;
+        opacity: 1;
+        transition: 0.6s;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        cursor: pointer;
+        min-width: 400px;
+    }
+
+    .create {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .create p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create a {
+        margin-top: 5px;
+    }
     </style>
 </head>
 <body>
@@ -111,7 +171,8 @@
                 </div>
                
                 
-                <div id="api" role="main"></div>
+                <div id="api" data-name="Unified" role="main">
+                </div>
             </div>
         </div>
     </div>
