@@ -37,6 +37,7 @@
 
         .panel-body {
             text-align: left;
+            box-shadow: 2px 2px 5px 1px;
         }
 
         /* Sign-in button styling */
@@ -54,7 +55,7 @@
         }
 
         #api .localAccount .entry .buttons button:hover {
-            background: linear-gradient(156deg, rgb(250, 34, 25, 1) 0%, rgba(232, 98, 80, 1) 100%);
+            background: linear-gradient(156deg, rgb(149, 41, 37) 0%, rgba(232, 98, 80, 1) 100%);
             color: white !important;
             opacity: 1;
             transition: 0.6s;
@@ -66,26 +67,8 @@
             width: 100%;
         }
 
-        /* Adjust heading */
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-    </style>
-    <style id="idpselector">
-        #SignInWithLogonNameExchange, #SignUpWithLogonEmailExchange, #SignUpWithLogonNameExchange {
-            background-image: url(https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/bannerlogo?ts=638688542780965181);
-        }
-        #SignInWithLogonNameExchange:hover, #SignUpWithLogonEmailExchange:hover, #SignUpWithLogonNameExchange:hover {
-            background-image: url(https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/bannerlogo?ts=638688542780965181);
-        }
-        #SignUpWithLogonEmailExchange.text-link {
-            background-image: none;
-            background-color: transparent !important;
-        }
-        #SignUpWithLogonEmailExchange.text-link:hover {
-            background-image: none;
-            background-color: transparent !important;
+        .logo img{
+            max-height: 100px;
         }
     </style>
 </head>
@@ -93,7 +76,11 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body">
-                <!-- The #api div is required for Azure B2C to inject the login flow -->
+                <div class=".logo"> 
+                    <img src="https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/bannerlogo?ts=638688542780965181" alt="logoScd">
+                </div>
+               
+                
                 <div id="api" role="main"></div>
             </div>
         </div>
