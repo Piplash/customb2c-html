@@ -18,10 +18,11 @@
 
         /* Remove all branding and images */
         #background_branding_container,
-        img[data-tenant-branding-background],
-        img[data-tenant-branding-logo] {
+        img[data-tenant-branding-background] {
             display: none !important;
         }
+
+        
 
         /* Center the content */
         .container {
@@ -73,12 +74,27 @@
             margin-bottom: 20px;
         }
     </style>
+    <style id="idpselector">
+        #SignInWithLogonNameExchange, #SignUpWithLogonEmailExchange, #SignUpWithLogonNameExchange {
+            background-image: url(https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/bannerlogo?ts=638688542780965181);
+        }
+        #SignInWithLogonNameExchange:hover, #SignUpWithLogonEmailExchange:hover, #SignUpWithLogonNameExchange:hover {
+            background-image: url(https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/bannerlogo?ts=638688542780965181);
+        }
+        #SignUpWithLogonEmailExchange.text-link {
+            background-image: none;
+            background-color: transparent !important;
+        }
+        #SignUpWithLogonEmailExchange.text-link:hover {
+            background-image: none;
+            background-color: transparent !important;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h2>Iniciar sesión</h2>
                 <!-- The #api div is required for Azure B2C to inject the login flow -->
                 <div id="api" role="main"></div>
             </div>
