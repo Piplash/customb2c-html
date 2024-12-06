@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Iniciar sesión</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* Estilo base */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/illustration?ts=638688540488861987');
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container a {
+    color: rgb(250, 34, 25, 1);
+}
+
+/* Quitar puntos de las listas sin afectar otros elementos */
+ul {
+    list-style: none; /* Elimina los puntos */
+    padding: 0;
+    margin: 0;
+}
+
+/* Mantener elementos ocultos */
+h1 {
+    font-size: 2rem !important;
+}
+
+.attrEntry label {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+/* Paneles y alineación */
+.panel-default {
+    border: none;
+    box-shadow: none;
+}
+
+.panel-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 450px;
+    box-shadow: 2px 2px 5px 1px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Logo centrado */
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-height: 100px;
+}
+
+/* Entrada centrada */
+.entry-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.entry-item label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+input {
+    outline: 0;
+    background-color: #fff !important;
+    background-image: none !important;
+    border-radius: 3px !important;
+    display: inline-block;
+    font-size: 1em;
+    height: 40px;
+    padding: 6px 20px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.attrEntry a{
+    display: none;
+}
+
+/* Etiquetas para inputs */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Botones */
+button {
+    background: linear-gradient(156deg, rgb(250, 34, 25, 1) 0%, rgba(232, 98, 80, 1) 100%);
+    color: white !important;
+    opacity: 0.9;
+    transition: 0.3s !important;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    min-width: 380px;
+}
+
+button:hover {
+    background: linear-gradient(156deg, rgb(212, 74, 69) 0%, rgba(232, 98, 80, 1) 100%);
+    opacity: 1;
+}
+
+/* Botones en formularios */
+#attributeVerification button {
+    background: linear-gradient(156deg, rgb(250, 34, 25, 1) 0%, rgba(232, 98, 80, 1) 100%);
+    color: white !important;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    max-width: 100px;
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+#attributeVerification button:hover {
+    background: linear-gradient(156deg, rgb(212, 74, 69) 0%, rgba(232, 98, 80, 1) 100%);
+    opacity: 1;
+    transition: 0.6s;
+}
+
+/* Centrando elementos */
+.buttons,
+.create {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Crear una cuenta */
+.create a {
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Crear el ícono de la cruz */
+.buttons #cancel {
+    font-size: 1.5rem !important;/* Tamaño grande */
+    font-weight: 500;
+    background: none;
+    color: black !important;
+    cursor: pointer;
+    text-decoration: none; /* Elimina subrayado, en caso de ser un enlace */
+    border: none; /* Asegura que no parezca un botón */
+    line-height: 1;
+    transition: 0.6s;
+    min-width: auto; /* Sobrescribe el ancho mínimo heredado */
+    max-width: 200px; /* Limita el ancho máximo */
+    text-align: right;
+}
+
+.buttons #cancel:hover{
+    background: none;
+    color: red !important;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class=".logo"> 
+                    <img src="https://aadcdn.msftauthimages.net/dbd5a2dd-2wk8xdvyisnv-7e909xdb-xujhzd2jmohg5snt523-g/logintenantbranding/0/bannerlogo?ts=638688542780965181" alt="logoScd">
+                </div>
+               
+                
+                <div id="api" data-name="Unified" role="main">
+      <div class="heading">
+        <h1 role="heading">Detalles del usuario</h1>
+      </div>
+    <div class="buttons">
+    </div>
+    <div class="intro">
+      <p>Proporcione los siguientes detalles.</p>
+    </div>
+    <form id="attributeVerification" action="JavaScript:void(0);">
+        <div id="requiredFieldMissing" class="error pageLevel" style="display: none;" aria-hidden="true">Falta un campo obligatorio. Rellene todos los campos necesarios y vuelva a intentarlo.</div>
+        <div id="fieldIncorrect" class="error pageLevel" style="display: none;" aria-hidden="true">Hay uno o varios campos rellenados de forma incorrecta. Compruebe las entradas y vuelva a intentarlo.</div>
+        <div id="claimVerificationServerError" class="error pageLevel" style="display: none;" aria-hidden="true"></div>
+        <div id="attributeList" class="attr">
+            <ul>
+                <li class="TextBox UserId_li"><div class="attrEntry"><label id="UserId_label" for="UserId">Nombre de usuario*</label><div class="error itemLevel" role="alert"></div><input id="UserId" class="textInput" type="text" placeholder="Nombre de usuario" pattern="^[a-zA-Z0-9]+[a-zA-Z0-9_-]*$" title="Nombre de usuario usado para iniciar sesión" aria-required="true" autofocus="autofocus" aria-disabled="true" disabled="disabled" tabindex="-1"><a class="helpLink tiny" href="javascript:void(0)" data-help="Nombre de usuario usado para iniciar sesión">¿Qué es esto?</a></div></li>
+                <li class="VerificationControl emailVerificationControl_li"><div class="attrEntry"><label id="emailVerificationControl_label" for="emailVerificationControl"></label><div class="error itemLevel" role="alert"></div><div class="verificationControlContent" id="emailVerificationControl"><div class="verificationInfoText"><div id="emailVerificationControl_info_message" aria-hidden="true" role="alert" aria-label="La comprobación es obligatoria. Haga clic en el botón Enviar." style="display: none;">La comprobación es obligatoria. Haga clic en el botón Enviar.</div></div><div class="verificationSuccessText"><div id="emailVerificationControl_success_message" aria-hidden="true" role="alert" aria-label="" style="display: none;"></div></div><div class="verificationErrorText error"><div id="emailVerificationControl_error_message" aria-hidden="true" role="alert" aria-label="" style="display: none;"></div></div><ul><li class="EmailBox email_li email" aria-hidden="false" style="display: inline;"><div class="attrEntry"><label id="email_label" for="email">Dirección de correo electrónico*</label><div class="error itemLevel" role="alert"></div><input id="email" class="textInput" type="email" placeholder="Dirección de correo electrónico" pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" title="Dirección de correo electrónico que se puede usar para contactarle." aria-required="true"><a class="helpLink tiny" href="javascript:void(0)" data-help="Dirección de correo electrónico que se puede usar para contactarle.">¿Qué es esto?</a></div></li><li class="TextBox emailVerificationCode_li VerificationCode" aria-hidden="true" style="display: none;"><div class="attrEntry"><label id="emailVerificationCode_label" for="emailVerificationCode">Código de verificación*</label><div class="error itemLevel" role="alert"></div><input id="emailVerificationCode" class="textInput" type="text" placeholder="Código de verificación" title="Se recibió un código de verificación en el correo electrónico." aria-required="true" autocomplete="off" disabled=""><a class="helpLink tiny" href="javascript:void(0)" data-help="Se recibió un código de verificación en el correo electrónico.">¿Qué es esto?</a></div></li></ul><div class="working" style="display: none;" aria-hidden="true"></div><div class="buttons"><button class="sendCode" id="emailVerificationControl_but_send_code" type="button" aria-label="Enviar código de verificación" aria-hidden="false" style="display: inline;">Enviar código de verificación</button><button class="verifyCode" id="emailVerificationControl_but_verify_code" type="button" aria-label="Verificar código" aria-hidden="true" style="display: none;">Verificar código</button><button class="sendNewCode" id="emailVerificationControl_but_send_new_code" type="button" aria-label="Enviar código nuevo" aria-hidden="true" style="display: none;">Enviar código nuevo</button><button class="changeClaims" id="emailVerificationControl_but_change_claims" type="button" aria-label="Cambiar correo electrónico Dirección de correo electrónico" aria-hidden="true" style="display: none;">Cambiar correo electrónico</button></div></div><a class="helpLink tiny" href="javascript:void(0)">¿Qué es esto?</a></div></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button id="continue" type="submit" form="attributeVerification" aria-disabled="true" aria-label="Continuar" tabindex="-1">Continuar</button><button id="cancel" aria-label="Cancelar" formnovalidate="">Cancelar</button>
+        </div>
+
+        <div class="verifying-modal">
+            <div id="verifying_blurb"></div>
+        </div>
+    </form>
+    
+  </div>
+                    
+                </div>
+        </div>
+    </div>
+</body>
+</html>
